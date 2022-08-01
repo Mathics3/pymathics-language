@@ -1,0 +1,9 @@
+*~
+.python-version
+/ChangeLog
+/build
+/dist
+/pymathics_language.egg-info
+/pymathics_natlang.egg-info
+/tmp
+__pycache__
