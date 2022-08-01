@@ -30,7 +30,7 @@ def eval_alphabet(language_name: String) -> Optional[List[String]]:
     if locale not in availableLocales:
         return
     alphabet_set = LocaleData(locale).getExemplarSet(0, 0)
-    return to_mathics_list(list(alphabet_set), elements_conversion_fn=String)
+    return to_mathics_list(*alphabet_set, elements_conversion_fn=String)
 
 
 class Alphabet(Builtin):
@@ -44,12 +44,18 @@ class Alphabet(Builtin):
       <dd> gives the alphabet for the language or class $type$.
     </dl>
 
-    >> Alphabet[]
-     = {a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z}
     >> Alphabet["Ukrainian"]
      = {a, ä, b, c, d, e, f, g, h, i, j, k, l, m, n, o, ö, p, q, r, s, ß, t, u, ü, v, w, x, y, z}
 
-    Some languages have the same basic set of letters.
+    The alphabet when nothing is specified, "English" is used:
+    >> Alphabet[]
+     = {a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z}
+
+    Instead of a language name, you can give a local value:
+    >> Alphabet["es"]
+     = {a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z, á, é, í, ñ, ó, ú, ü}
+
+    Many locales are the same basic set of letters.
     >> Alphabet["en_NZ"] == Alphabet["en"]
      = True
     """
