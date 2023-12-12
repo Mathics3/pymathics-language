@@ -35,7 +35,7 @@ setup(
     version=__version__,
     packages=find_namespace_packages(include=["pymathics.*"]),
     install_requires=[
-        "Mathics3 >= 5.0.0.dev0,<5.1.0",
+        "Mathics3 >= 7.0.0.dev",
         "PyICU>=2.9",
     ],
     zip_safe=False,
