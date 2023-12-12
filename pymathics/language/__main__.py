@@ -13,7 +13,7 @@ from icu import Locale, LocaleData
 from typing import List, Optional
 
 from mathics.core.atoms import String
-from mathics.core.base import Builtin
+from mathics.core.builtin import Builtin
 from mathics.core.convert.expression import to_mathics_list
 
 availableLocales = Locale.getAvailableLocales()
