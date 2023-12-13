@@ -12,8 +12,8 @@ Languages & Translations
 from icu import Locale, LocaleData
 from typing import List, Optional
 
-from mathics.builtin.base import Builtin
 from mathics.core.atoms import String
+from mathics.core.builtin import Builtin
 from mathics.core.convert.expression import to_mathics_list
 
 availableLocales = Locale.getAvailableLocales()
@@ -70,7 +70,7 @@ class Alphabet(Builtin):
 
     summary_text = "lowercase letters in an alphabet"
 
-    def apply(self, alpha: String, evaluation):
+    def eval(self, alpha: String, evaluation):
         """Alphabet[alpha_String]"""
         alphabet_list = eval_alphabet(alpha)
         if alphabet_list is None:

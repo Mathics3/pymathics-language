@@ -8,8 +8,8 @@ import os.path as osp
 from setuptools import setup, find_namespace_packages
 
 # Ensure user has the correct Python version
-if sys.version_info < (3, 6):
-    print("Mathics support Python 3.6 and above; you have %d.%d" % sys.version_info[:2])
+if sys.version_info < (3, 8):
+    print("Mathics support Python 3.8 and above; you have %d.%d" % sys.version_info[:2])
     sys.exit(-1)
 
 
@@ -35,7 +35,7 @@ setup(
     version=__version__,
     packages=find_namespace_packages(include=["pymathics.*"]),
     install_requires=[
-        "Mathics3 >= 5.0.0.dev0,<5.1.0",
+        "Mathics3 >= 7.0.0.dev",
         "PyICU>=2.9",
     ],
     zip_safe=False,
